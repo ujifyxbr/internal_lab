@@ -2,13 +2,18 @@ package learn.epam.mlhh.entity;
 
 import javax.persistence.*;
 
+/**
+ * Database entity classes for candidates.
+ * @author
+ * @version 1.1.2
+ */
 @Entity
-@Table(name = "сandidate")
+@Table(name = "Candidate")
 public class Candidate {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_candidate;
+    private Long candidateId;
 
     @Column
     private String name;
@@ -34,12 +39,15 @@ public class Candidate {
     @Column
     private String keyword;
 
-    public Integer getId() {
-        return id_candidate;
+    public Candidate() {
     }
 
-    public void setId(Integer id_candidate) {
-        this.id_candidate = id_candidate;
+    public Long getCandidateId() {
+        return candidateId;
+    }
+
+    public void setCandidateId(Long candidateId) {
+        this.candidateId = candidateId;
     }
 
     public String getName() {
@@ -78,7 +86,7 @@ public class Candidate {
         return salary;
     }
 
-    public void setSalary(double salary) {
+    public void setSalary(Double salary) {
         this.salary = salary;
     }
 
@@ -98,18 +106,18 @@ public class Candidate {
         this.experience = experience;
     }
 
-    public String getKeyword() {
+    public String getKeyWord() {
         return keyword;
     }
 
-    public void setKeyword(String keyword) {
+    public void setKeyWord(String keyword) {
         this.keyword = keyword;
     }
 
     @Override
     public String toString() {
         return "Candidate{" +
-                "id_candidate=" + id_candidate +
+                "candidateId=" + candidateId +
                 ", name='" + name + '\'' +
                 ", age='" + age + '\'' +
                 ", gender='" + gender + '\'' +
