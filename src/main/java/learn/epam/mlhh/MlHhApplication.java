@@ -4,6 +4,9 @@ import learn.epam.mlhh.entity.Candidate;
 import learn.epam.mlhh.entity.Users;
 import learn.epam.mlhh.service.CandidateService;
 import learn.epam.mlhh.service.UserService;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import learn.epam.mlhh.controllers.Database;
 import org.springframework.boot.SpringApplication;
@@ -15,6 +18,8 @@ import org.springframework.context.event.EventListener;
 @SpringBootApplication
 public class MlHhApplication {
 
+private final 	static Logger logger = Logger.getLogger(MlHhApplication.class);
+
 	@Autowired
 	private CandidateService candidateService;
 
@@ -22,7 +27,9 @@ public class MlHhApplication {
 	private UserService userService;
 
 	public static void main(String[] args) {
+		logger.info("Start method");
 		SpringApplication.run(MlHhApplication.class, args);
+
 		Database.connectDatabase();
 	}
 
