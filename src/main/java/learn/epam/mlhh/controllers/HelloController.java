@@ -16,8 +16,15 @@ public class HelloController {
 
     @RequestMapping(value="/", method=RequestMethod.POST)
     public String homePost(Map<String, Object> model) {
-        model.put("message", "Method Post");
+        model.put("message", "you have sent value method Post");
         return "post";
+    }
+
+    @RequestMapping(value="/table", method=RequestMethod.POST)
+    public String Table(Map<String, Object> model) {
+        model.put("messageTable" , "Table");
+        model.put("candidats" , Database.databaseToArray() );
+        return "table";
     }
 
 }
