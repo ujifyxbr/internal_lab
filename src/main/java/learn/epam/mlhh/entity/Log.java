@@ -23,13 +23,13 @@ public class Log {
         @Column
         private Time time;
 
-        @Column
+        @Column(columnDefinition="text")
         private String  status;
 
-        @Column
+        @Column(columnDefinition="text")
         private String className;
 
-        @Column
+        @Column(columnDefinition="text")
         private String message;
 
         public Log() {
