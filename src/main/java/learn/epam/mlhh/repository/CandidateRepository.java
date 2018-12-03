@@ -6,6 +6,11 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
+/**
+ * Interfaces for accessing entities Candidate in database
+ * @author
+ * @version 1.1.2
+ */
 public interface CandidateRepository extends JpaRepository<Candidate, Long> {
 
     List<Candidate> findAllByName(String name);
