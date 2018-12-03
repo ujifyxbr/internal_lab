@@ -20,4 +20,11 @@ public class HelloController {
         return "post";
     }
 
+    @RequestMapping(value="/table", method=RequestMethod.POST)
+    public String Table(Map<String, Object> model) {
+        model.put("messageTable" , "Table");
+        model.put("candidats" , Database.databaseToArray() );
+        return "table";
+    }
+
 }
