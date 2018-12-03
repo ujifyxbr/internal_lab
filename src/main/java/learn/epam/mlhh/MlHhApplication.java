@@ -3,7 +3,7 @@ package learn.epam.mlhh;
 import learn.epam.mlhh.entity.Candidate;
 import learn.epam.mlhh.entity.Users;
 import learn.epam.mlhh.service.CandidateService;
-import learn.epam.mlhh.service.UsersService;
+import learn.epam.mlhh.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,7 +16,9 @@ public class MlHhApplication {
 
 	@Autowired
 	private CandidateService candidateService;
-	private UsersService usersService;
+
+	@Autowired
+	private UserService userService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(MlHhApplication.class, args);
@@ -47,9 +49,9 @@ public class MlHhApplication {
 		candidateService.createCandidate(newCandidate);
 
 		Users user = new Users();
-		user.setUserName("admin");
-		user.setUserPassword("123");
-		usersService.createUser(user);
+		user.setUserName("Admin");
+		user.setUserPassword("password123");
+		userService.createUser(user);
 
 		/*candidateService.findAll().forEach(it-> System.out.println(it));
 
