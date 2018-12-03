@@ -1,8 +1,10 @@
 package learn.epam.mlhh;
 
 import learn.epam.mlhh.entity.Candidate;
+import learn.epam.mlhh.entity.Log;
 import learn.epam.mlhh.entity.Users;
 import learn.epam.mlhh.service.CandidateService;
+import learn.epam.mlhh.service.LogService;
 import learn.epam.mlhh.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import learn.epam.mlhh.controllers.Database;
@@ -10,6 +12,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
+
+import java.sql.Date;
+import java.sql.Time;
 
 
 @SpringBootApplication
@@ -20,6 +25,9 @@ public class MlHhApplication {
 
 	@Autowired
 	private UserService userService;
+
+	@Autowired
+	private LogService logService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(MlHhApplication.class, args);
@@ -54,6 +62,15 @@ public class MlHhApplication {
 		user.setUserName("Admin");
 		user.setUserPassword("password123");
 		userService.createUser(user);
+
+
+		Log log = new Log();
+		log.setDate(Date.valueOf("2018-01-01"));
+		log.setTime(Time.valueOf("11:12:01"));
+		log.setClassName("Log");
+		log.setMessage("message");
+		log.setStatus("status");
+		logService.createLog(log);
 
 		/*candidateService.findAll().forEach(it-> System.out.println(it));
 
