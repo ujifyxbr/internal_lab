@@ -34,6 +34,7 @@ public class SearchController {
         PutDB putDB = new PutDB(name,age);
         putBDRepos.save(putDB);
 
+
         return "main";
     }
 }
