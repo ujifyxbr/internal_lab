@@ -13,10 +13,18 @@ public class PutDB {
     private Integer id;
 
     private String name;
-    private int age;
+    private Integer age;
     private String male;
     private  String region;
     private int salary;
+
+    public PutDB() {
+    }
+
+    public PutDB(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
 
     public String getName() {
         return name;
@@ -26,11 +34,11 @@ public class PutDB {
         this.name = name;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 
