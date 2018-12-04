@@ -33,8 +33,9 @@ public class SearchController {
     public String add (@RequestParam String name, @RequestParam Integer age, Map<String, Object> model){
         PutDB putDB = new PutDB(name,age);
         putBDRepos.save(putDB);
+        Iterable<PutDB> putDBS = putBDRepos.findAll();
 
-
+        model.put("candidates", putDBS);
         return "main";
     }
 }
