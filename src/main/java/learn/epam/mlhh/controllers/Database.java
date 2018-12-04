@@ -1,5 +1,8 @@
 package learn.epam.mlhh.controllers;
 
+import learn.epam.mlhh.MlHhApplication;
+import org.apache.log4j.Logger;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.*;
@@ -9,6 +12,7 @@ import java.util.Properties;
 
 
 public class Database {
+    private final 	static Logger logger = Logger.getLogger(Database.class);
     private static String url;
     private static String username;
     private static String password;
@@ -65,6 +69,7 @@ public class Database {
 
     private Database(int candidate_id, int age, String developer, int experience, String gender,
                      String keyword, String name,  String region, int salary) {
+
         this.candidate_id = candidate_id;
         this.name = name;
         this.age = age;
@@ -86,7 +91,9 @@ public class Database {
             url = property.getProperty("spring.datasource.url");
             username = property.getProperty("spring.datasource.username");
             password = property.getProperty("spring.datasource.password");
+            logger.info("successful database connection");
         }catch (IOException e) {
+            logger.error("Error: File properties can't find");
             System.err.println("ОШИБКА: Файл свойств отсуствует!");
         }
 
@@ -108,10 +115,13 @@ public class Database {
                         rs.getString("region"),
                         rs.getInt("salary"));
                 candidats.add(dbOfCandidats);
-            }
 
+
+            }
+            logger.info("Candidates add sucsessfully");
         } catch (SQLException e) {
             System.out.println("Database error");
+            logger.error("Database error");
             e.printStackTrace();
         }
         return candidats;
