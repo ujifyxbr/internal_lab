@@ -1,29 +1,33 @@
 package learn.epam.mlhh.controllers;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.sql.*;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Properties;
 
 
 public class Database {
-    static final String DB_URL = "jdbc:postgresql://127.0.0.1:5432/postgres";
-    static final String USER = "postgres";
-    static final String PASS = "postgres";
+    private static String url;
+    private static String username;
+    private static String password;
     private static Connection connection = null;
     private static Statement statement = null;
 
-    private int id_candidate;
+    private int candidate_id;
     private String name;
     private int age;
     private String gender;
     private String region;
     private int salary;
-    private int developer;
+    private String developer;
     private int experience;
     private String keyword;
 
+
     public int getId_candidate() {
-        return id_candidate;
+        return candidate_id;
     }
 
     public String getName() {
@@ -46,7 +50,7 @@ public class Database {
         return salary;
     }
 
-    public int getDeveloper() {
+    public String getDeveloper() {
         return developer;
     }
 
@@ -59,9 +63,9 @@ public class Database {
     }
 
 
-    private Database(int id_candidate, String name, int age, String gender, String region,
-                     int salary, int developer, int experience, String keyword) {
-        this.id_candidate = id_candidate;
+    private Database(int candidate_id, int age, String developer, int experience, String gender,
+                     String keyword, String name,  String region, int salary) {
+        this.candidate_id = candidate_id;
         this.name = name;
         this.age = age;
         this.gender = gender;
@@ -72,40 +76,37 @@ public class Database {
         this.keyword = keyword;
     }
 
-    public static void connectDatabase() {
-        try {
-            Class.forName("org.postgresql.Driver");
-        } catch (ClassNotFoundException e) {
-            System.out.println("PostgreSQL Database Driver is not found. Include it in your library path ");
-            e.printStackTrace();
-            return;
-        }
-        System.out.println("PostgreSQL Database Driver successfully connected");
-        try {
-            connection = DriverManager.getConnection(DB_URL, USER, PASS);
-            statement = connection.createStatement();
-        } catch (SQLException e) {
-            System.out.println("Connection Failed");
-            e.printStackTrace();
-        }
-    }
-
     public static List<Database> databaseToArray() {
-        Database dbOfCandidats;
+        FileInputStream fis;
+        Properties property = new Properties();
+
+        try {
+            fis = new FileInputStream("src/main/resources/application.properties");
+            property.load(fis);
+            url = property.getProperty("spring.datasource.url");
+            username = property.getProperty("spring.datasource.username");
+            password = property.getProperty("spring.datasource.password");
+        }catch (IOException e) {
+            System.err.println("ОШИБКА: Файл свойств отсуствует!");
+        }
+
+    Database dbOfCandidats;
         List<Database> candidats = new ArrayList<Database>();
         try {
-            ResultSet rs = statement.executeQuery("SELECT * FROM public.\"Candidate\"");
+            connection = DriverManager.getConnection(url, username, password);
+            statement = connection.createStatement();
+            ResultSet rs = statement.executeQuery("SELECT * FROM public.candidate");
             while (rs.next()) {
                 dbOfCandidats = new Database(
-                        rs.getInt("id_candidate"),
-                        rs.getString("name"),
+                        rs.getInt("candidate_id"),
                         rs.getInt("age"),
-                        rs.getString("gender"),
-                        rs.getString("region"),
-                        rs.getInt("salary"),
-                        rs.getInt("developer"),
+                        rs.getString("developer"),
                         rs.getInt("experience"),
-                        rs.getString("keyword"));
+                        rs.getString("gender"),
+                        rs.getString("keyword"),
+                        rs.getString("name"),
+                        rs.getString("region"),
+                        rs.getInt("salary"));
                 candidats.add(dbOfCandidats);
             }
 
@@ -116,8 +117,4 @@ public class Database {
         return candidats;
     }
 
-
-    public static void oldConnectDB () {
-
-    }
 }

@@ -1,6 +1,7 @@
 package learn.epam.mlhh.entity;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 /**
  * Database entity classes for candidates.
@@ -15,28 +16,28 @@ public class Candidate {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long candidateId;
 
-    @Column
+    @Column(columnDefinition="text")
     private String name;
 
     @Column
     private Integer age;
 
-    @Column
+    @Column(columnDefinition="text")
     private String gender;
 
-    @Column
+    @Column(columnDefinition="text")
     private String region;
 
     @Column
-    private Double salary;
+    private BigDecimal salary;
 
-    @Column
+    @Column(columnDefinition="text")
     private String developer;
 
-    @Column
+    @Column(columnDefinition="numeric")
     private Integer experience;
 
-    @Column
+    @Column(columnDefinition="text")
     private String keyword;
 
     public Candidate() {
@@ -82,12 +83,10 @@ public class Candidate {
         this.region = region;
     }
 
-    public Double getSalary() {
-        return salary;
-    }
+    public Double getSalary() { return salary.doubleValue(); }
 
     public void setSalary(Double salary) {
-        this.salary = salary;
+        this.salary = new BigDecimal(salary);
     }
 
     public String getDeveloper() {
@@ -98,9 +97,7 @@ public class Candidate {
         this.developer = developer;
     }
 
-    public Integer getExperience() {
-        return experience;
-    }
+    public Integer getExperience() { return experience; }
 
     public void setExperience(Integer experience) {
         this.experience = experience;
