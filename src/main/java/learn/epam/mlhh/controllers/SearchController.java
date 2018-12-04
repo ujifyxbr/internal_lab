@@ -15,9 +15,9 @@ public class SearchController {
         model.put("name", name);
         return "search";
     }
-//    @GetMapping
-//    public String main(Map<String, Object> model) {
-//        model.put("some", "hello, letsCode!");
-//        return "index";
-//    }
+    @GetMapping
+    public String main(Map<String, Object> model) {
+        model.put("some", "hello, letsCode!");
+        return "main";
+    }
 }
