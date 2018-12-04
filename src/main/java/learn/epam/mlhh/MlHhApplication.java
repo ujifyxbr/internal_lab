@@ -7,7 +7,6 @@ import learn.epam.mlhh.service.CandidateService;
 import learn.epam.mlhh.service.LogService;
 import learn.epam.mlhh.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import learn.epam.mlhh.controllers.Database;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
@@ -31,7 +30,6 @@ public class MlHhApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MlHhApplication.class, args);
-		Database.connectDatabase();
 	}
 
 	@EventListener(ApplicationReadyEvent.class)
