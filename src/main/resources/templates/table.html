@@ -30,7 +30,7 @@
         </thead>
         <tbody>
         <tr th:each="candidate: ${candidats}">
-            <td th:text="${candidate.getCandidateId()}"></td>
+            <td th:text="${candidate.getId_candidate()}"></td>
             <td th:text="${candidate.getName()}"></td>
             <td th:text="${candidate.getAge()}"></td>
             <td th:text="${candidate.getGender()}"></td>
@@ -38,7 +38,7 @@
             <td th:text="${candidate.getSalary()}"></td>
             <td th:text="${candidate.getDeveloper()}"></td>
             <td th:text="${candidate.getExperience()}"></td>
-            <td th:text="${candidate.getKeyWord()}"></td>
+            <td th:text="${candidate.getKeyword()}"></td>
         </tr>
         </tbody>
     </table>
