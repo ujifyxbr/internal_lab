@@ -118,12 +118,14 @@ public class Database {
 
 
             }
-            logger.info("Candidates add sucsessfully");
         } catch (SQLException e) {
             System.out.println("Database error");
-            logger.error("Database error");
             e.printStackTrace();
         }
+        if(!(candidats.isEmpty())){
+            logger.info("Candidates add sucsessfully");
+        }
+        else logger.error("Database error");
         return candidats;
     }
 
