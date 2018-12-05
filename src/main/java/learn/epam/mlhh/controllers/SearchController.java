@@ -26,16 +26,16 @@ public class SearchController {
     public String main(Map<String, Object> model) {
         Iterable<PutDB> putDBS = putBDRepos.findAll();
 
-        model.put("candidates", putDBS);
+        model.put("internal_lab_db", putDBS);
         return "main";
     }
     @PostMapping("/main")
-    public String add (@RequestParam String name, @RequestParam Integer age, Map<String, Object> model){
+    public String add (@RequestParam String name, @RequestParam String age, Map<String, Object> model){
         PutDB putDB = new PutDB(name,age);
         putBDRepos.save(putDB);
         Iterable<PutDB> putDBS = putBDRepos.findAll();
 
-        model.put("candidates", putDBS);
+        model.put("internal_lab_db", putDBS);
         return "main";
     }
 }
