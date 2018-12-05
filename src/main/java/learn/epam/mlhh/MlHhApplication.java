@@ -6,6 +6,7 @@ import learn.epam.mlhh.entity.Users;
 import learn.epam.mlhh.service.CandidateService;
 import learn.epam.mlhh.service.LogService;
 import learn.epam.mlhh.service.UserService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,6 +19,7 @@ import java.sql.Time;
 
 @SpringBootApplication
 public class MlHhApplication {
+	private final 	static Logger logger = Logger.getLogger(MlHhApplication.class);
 
 	@Autowired
 	private CandidateService candidateService;
@@ -34,6 +36,7 @@ public class MlHhApplication {
 
 	@EventListener(ApplicationReadyEvent.class)
 	private void testJpaMethods(){
+		logger.info("Add new candidates");
 		Candidate candidate = new Candidate();
 		candidate.setName("Smith");
 		candidate.setAge(25);
