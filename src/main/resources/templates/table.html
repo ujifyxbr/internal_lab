@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Table</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 th:text="${messageTable}"></h1><form action="/" method="GET">
+            <input type="submit" value="back">
+        </form>
+        </div>
+    </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th >ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>gender</th>
+            <th>region</th>
+            <th>salary</th>
+            <th>developer</th>
+            <th>experience</th>
+            <th>keyword</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="candidate: ${candidats}">
+            <td th:text="${candidate.getId_candidate()}"></td>
+            <td th:text="${candidate.getName()}"></td>
+            <td th:text="${candidate.getAge()}"></td>
+            <td th:text="${candidate.getGender()}"></td>
+            <td th:text="${candidate.getRegion()}"></td>
+            <td th:text="${candidate.getSalary()}"></td>
+            <td th:text="${candidate.getDeveloper()}"></td>
+            <td th:text="${candidate.getExperience()}"></td>
+            <td th:text="${candidate.getKeyword()}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
