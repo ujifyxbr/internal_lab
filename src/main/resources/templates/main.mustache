@@ -1,7 +1,6 @@
 <html>
-
 <body>
-<div>
+ <div>
     <form method="post">
         <input type="text" name="name" placeholder="Введите имя" />
         <input type="text" name="age" placeholder="Возраст" />
@@ -10,13 +9,12 @@
         <input type="salary" name="salary" placeholder="Зарплата" />
         <button type="submit">Добавить</button>
     </form>
-</div>
+ </div>
 <div>Списог чего-то</div>
-<b>{{id}}</b>
-<span>{{name}}</span>
-<i>{{age}}</i>
-{{#candidates}}
-    <b>{{name}}</b>
-{{/candidates}}
+ {{#internal_lab_db}}
+ <b>{{id}}</b>
+ <span>{{name}}</span>
+ <span>{{age}}</span>
+{{/internal_lab_db}}
 </body>
 </html>
