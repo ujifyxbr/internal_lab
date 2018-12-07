@@ -1,6 +1,8 @@
 package learn.epam.mlhh.controllers;
 
+import learn.epam.mlhh.WebSecurityConfig;
 import learn.epam.mlhh.service.CandidateService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -8,6 +10,7 @@ import java.util.Map;
 
 @Controller
 public class HelloController {
+    private final 	static Logger logger = Logger.getLogger(WebSecurityConfig.class);
     private String message = "Form";
 
     @Autowired
@@ -22,6 +25,7 @@ public class HelloController {
     @RequestMapping(value="/", method=RequestMethod.POST)
     public String homePost(Map<String, Object> model) {
         model.put("message", "you have sent value method Post");
+        logger.info("Method value sent sucsessfully");
         return "post";
     }
 
@@ -29,6 +33,10 @@ public class HelloController {
     public String Table(Map<String, Object> model) {
         model.put("messageTable" , "Table");
         model.put("candidats" , candidateService.findAll() );
+        if(!(model.isEmpty())){
+            logger.info("Candidates add sucsessfully");
+        }
+        else logger.error("Database error");
         return "table";
     }
 
