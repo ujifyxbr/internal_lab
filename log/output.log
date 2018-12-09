@@ -13,3 +13,57 @@
 2018-12-09 | 12:05:59 | INFO  | MlHhApplication:39 | Add new candidates | 
 2018-12-09 | 12:14:41 | INFO  | WebSecurityConfig:40 | user has successfully logged in  | 
 2018-12-09 | 12:14:42 | INFO  | MlHhApplication:39 | Add new candidates | 
+2018-12-09 | 12:17:57 | INFO  | WebSecurityConfig:40 | user has successfully logged in  | 
+2018-12-09 | 12:17:58 | INFO  | MlHhApplication:39 | Add new candidates | 
+2018-12-09 | 12:28:29 | INFO  | WebSecurityConfig:40 | user has successfully logged in  | 
+2018-12-09 | 12:28:30 | INFO  | MlHhApplication:39 | Add new candidates | 
+2018-12-09 | 12:31:32 | INFO  | WebSecurityConfig:40 | user has successfully logged in  | 
+2018-12-09 | 12:31:33 | INFO  | MlHhApplication:39 | Add new candidates | 
+2018-12-09 | 12:49:17 | INFO  | WebSecurityConfig:40 | user has successfully logged in  | 
+2018-12-09 | 12:49:18 | INFO  | MlHhApplication:39 | Add new candidates | 
+2018-12-09 | 12:50:37 | INFO  | WebSecurityConfig:40 | user has successfully logged in  | 
+2018-12-09 | 12:50:38 | INFO  | MlHhApplication:39 | Add new candidates | 
+2018-12-09 | 12:51:13 | INFO  | WebSecurityConfig:40 | user has successfully logged in  | 
+2018-12-09 | 12:51:14 | INFO  | MlHhApplication:39 | Add new candidates | 
+2018-12-09 | 13:01:31 | INFO  | WebSecurityConfig:40 | user has successfully logged in  | 
+2018-12-09 | 13:01:32 | INFO  | MlHhApplication:39 | Add new candidates | 
+2018-12-09 | 13:05:58 | INFO  | WebSecurityConfig:40 | user has successfully logged in  | 
+2018-12-09 | 13:05:59 | INFO  | MlHhApplication:39 | Add new candidates | 
+2018-12-09 | 13:10:12 | INFO  | WebSecurityConfig:40 | user has successfully logged in  | 
+2018-12-09 | 13:10:13 | INFO  | MlHhApplication:39 | Add new candidates | 
+2018-12-09 | 13:12:30 | INFO  | WebSecurityConfig:40 | user has successfully logged in  | 
+2018-12-09 | 13:13:22 | INFO  | WebSecurityConfig:40 | user has successfully logged in  | 
+2018-12-09 | 13:13:23 | INFO  | MlHhApplication:39 | Add new candidates | 
+2018-12-09 | 13:15:07 | INFO  | WebSecurityConfig:40 | user has successfully logged in  | 
+2018-12-09 | 13:15:08 | INFO  | MlHhApplication:39 | Add new candidates | 
+2018-12-09 | 13:16:31 | INFO  | WebSecurityConfig:40 | user has successfully logged in  | 
+2018-12-09 | 13:16:31 | INFO  | MlHhApplication:39 | Add new candidates | 
+2018-12-09 | 13:31:50 | INFO  | WebSecurityConfig:40 | user has successfully logged in  | 
+2018-12-09 | 13:31:51 | INFO  | MlHhApplication:39 | Add new candidates | 
+2018-12-09 | 13:33:46 | INFO  | Database:94 | successful database connection | 
+2018-12-09 | 13:33:46 | INFO  | Database:121 | Candidates add sucsessfully | 
+2018-12-09 | 13:37:44 | INFO  | WebSecurityConfig:40 | user has successfully logged in  | 
+2018-12-09 | 13:42:52 | INFO  | WebSecurityConfig:40 | user has successfully logged in  | 
+2018-12-09 | 13:42:53 | INFO  | MlHhApplication:39 | Add new candidates | 
+2018-12-09 | 13:53:04 | INFO  | WebSecurityConfig:40 | user has successfully logged in  | 
+2018-12-09 | 13:53:05 | INFO  | MlHhApplication:39 | Add new candidates | 
+2018-12-09 | 14:00:22 | INFO  | WebSecurityConfig:40 | user has successfully logged in  | 
+2018-12-09 | 14:00:23 | INFO  | MlHhApplication:39 | Add new candidates | 
+2018-12-09 | 14:02:46 | INFO  | WebSecurityConfig:40 | user has successfully logged in  | 
+2018-12-09 | 14:02:46 | INFO  | MlHhApplication:39 | Add new candidates | 
+2018-12-09 | 14:06:30 | INFO  | WebSecurityConfig:40 | user has successfully logged in  | 
+2018-12-09 | 14:06:31 | INFO  | MlHhApplication:39 | Add new candidates | 
+2018-12-09 | 14:17:13 | INFO  | WebSecurityConfig:40 | user has successfully logged in  | 
+2018-12-09 | 14:17:14 | INFO  | MlHhApplication:39 | Add new candidates | 
+2018-12-09 | 14:19:29 | INFO  | Database:94 | successful database connection | 
+2018-12-09 | 14:19:29 | INFO  | Database:121 | Candidates add sucsessfully | 
+2018-12-09 | 14:20:28 | INFO  | WebSecurityConfig:40 | user has successfully logged in  | 
+2018-12-09 | 14:20:28 | INFO  | MlHhApplication:39 | Add new candidates | 
+2018-12-09 | 14:21:44 | INFO  | WebSecurityConfig:40 | user has successfully logged in  | 
+2018-12-09 | 14:21:45 | INFO  | MlHhApplication:39 | Add new candidates | 
+2018-12-09 | 14:32:24 | INFO  | WebSecurityConfig:40 | user has successfully logged in  | 
+2018-12-09 | 14:32:25 | INFO  | MlHhApplication:39 | Add new candidates | 
+2018-12-09 | 14:52:24 | INFO  | WebSecurityConfig:40 | user has successfully logged in  | 
+2018-12-09 | 14:52:25 | INFO  | MlHhApplication:39 | Add new candidates | 
+2018-12-09 | 15:00:36 | INFO  | WebSecurityConfig:40 | user has successfully logged in  | 
+2018-12-09 | 15:00:36 | INFO  | MlHhApplication:39 | Add new candidates | 
