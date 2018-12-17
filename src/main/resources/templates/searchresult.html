@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Table</title>
+    <title>Search Table</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
@@ -9,8 +9,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1 th:text="${messageTable}"></h1>
-            <form action="/" method="GET">
+            <h1 th:text="${messageSearch}"></h1><form action="/search" method="GET">
             <input type="submit" value="back">
         </form>
         </div>
@@ -30,7 +29,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="candidate: ${candidats}">
+        <tr th:each="candidate: ${searchPut}">
             <td th:text="${candidate.getCandidateId()}"></td>
             <td th:text="${candidate.getName()}"></td>
             <td th:text="${candidate.getAge()}"></td>

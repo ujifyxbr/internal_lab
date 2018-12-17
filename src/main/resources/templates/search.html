@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Search form</h1>
+<form action="/" method="GET">
+    <input type="submit" value="back">
+</form>
+
+<form action="#" th:action="@{/search}" th:object="${search}" method="post">
+
+    <p>Age min: <input type="text" th:field="*{ageMin}" /></p>
+    <p>Age max: <input type="text" th:field="*{ageMax}" /></p>
+    <p>Gender: <input type="text" th:field="*{gender}" /></p>
+    <p>Region: <input type="text" th:field="*{region}" /></p>
+    <p>Salary min: <input type="text" th:field="*{salaryMin}" /></p>
+    <p>Salary max: <input type="text" th:field="*{salaryMax}" /></p>
+    <p>Dveloper: <input type="text" th:field="*{developer}" /></p>
+    <p>Experience min: <input type="text" th:field="*{experienceMin}" /></p>
+    <p>Experience max: <input type="text" th:field="*{experienceMax}" /></p>
+    <p>Keyword: <input type="text" th:field="*{keywords}" /></p>
+    <br/>
+    <input type="submit" value="Submit search"/>
+</form>
+</body>
+</html>
+

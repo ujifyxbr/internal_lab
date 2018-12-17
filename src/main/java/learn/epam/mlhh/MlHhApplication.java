@@ -48,6 +48,40 @@ public class MlHhApplication {
 		candidate.setKeyWord("Spring");
 		candidateService.createCandidate(candidate);
 
+		Candidate candidate1 = new Candidate();
+		candidate1.setName("John");
+		candidate1.setAge(30);
+		candidate1.setGender("М");
+		candidate1.setRegion("Gorky");
+		candidate1.setSalary(500.000);
+		candidate1.setDeveloper("Java Developer");
+		candidate1.setExperience(3);
+		candidate1.setKeyWord("Spring");
+		candidateService.createCandidate(candidate1);
+
+		Candidate candidate2 = new Candidate();
+		candidate2.setName("Poul");
+		candidate2.setAge(40);
+		candidate2.setGender("М");
+		candidate2.setRegion("Gorky");
+		candidate2.setSalary(1000.000);
+		candidate2.setDeveloper("Java Developer");
+		candidate2.setExperience(5);
+		candidate2.setKeyWord("Spring");
+		candidateService.createCandidate(candidate2);
+
+
+		Candidate candidate3 = new Candidate();
+		candidate3.setName("Anna");
+		candidate3.setAge(25);
+		candidate3.setGender("Ж");
+		candidate3.setRegion("Mos");
+		candidate3.setSalary(500.000);
+		candidate3.setDeveloper("Java Developer");
+		candidate3.setExperience(3);
+		candidate3.setKeyWord("Spring");
+		candidateService.createCandidate(candidate3);
+
 		Candidate newCandidate = new Candidate();
 		newCandidate.setName("FIO");
 		newCandidate.setAge(20);

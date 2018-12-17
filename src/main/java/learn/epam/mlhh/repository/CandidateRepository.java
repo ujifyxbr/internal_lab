@@ -17,4 +17,5 @@ public interface CandidateRepository extends JpaRepository<Candidate, Long> {
 
     /*@Query("SELECT u FROM Candidate u WHERE developer like 'Java'")     //собственный запрос
     List<Candidate> findWhereDevelop();*/
+
 }

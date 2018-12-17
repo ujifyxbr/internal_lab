@@ -14,6 +14,7 @@ public class CandidateService {
     private final CandidateRepository candidateRepository;
 
     public CandidateService(CandidateRepository candidateRepository){
+
         this.candidateRepository = candidateRepository;
     }
 
@@ -32,4 +33,5 @@ public class CandidateService {
     public List<Candidate> findAllByName(String name){
         return candidateRepository.findAllByName(name);
     }
+
 }
