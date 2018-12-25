@@ -7,31 +7,48 @@
 </head>
 <body>
 <div class="container">
-    <div style="margin-top:100px;">
+    <h1>Парсер авито</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <p>Статус: <span th:text="${status}"></span></p>
+        </div>
+        <div class="col-md-6">
+            <a href="/parse" class="btn btn-warning">Перезапустить парсер</a>
+        </div>
+    </div>
+
+    <div>
         <h2>Категории</h2>
         <div th:each="ll: ${listCategory}">
-            <div th:text="${ll}"></div>
+            <span th:text="${ll.url}"></span>   -<span th:text="${ll.status}"></span>
         </div>
     </div>
 
-    <div style="margin-top:100px;">
+    <div>
         <h2>Страницы в категории</h2>
         <div th:each="ll: ${listPage}">
-            <div th:text="${ll}"></div>
+            <span th:text="${ll.url}"></span>   -<span th:text="${ll.status}"></span>
         </div>
     </div>
 
-    <div style="margin-top:100px;">
+    <div>
         <h2>Url</h2>
         <div th:each="ll: ${listUrl}">
-            <div th:text="${ll}"></div>
+            <span th:text="${ll.url}"></span>   -<span th:text="${ll.status}"></span>
         </div>
     </div>
 
-    <div style="margin-top:100px;">
-        <h2>Кандидат</h2>
-        <div th:each="entry: ${descCandidate}">
-            <p th:text="'Key: ' + ${entry.key} + ', Value: ' + ${entry.value}"></p>
+    <div>
+        <h2>Последний кандидат</h2>
+        <div>
+            <p>Name: <span th:text="${lastCandidate.name}"></span></p>
+            <p>Developer: <span th:text="${lastCandidate.developer}"></span></p>
+            <p>Age: <span th:text="${lastCandidate.age}"></span></p>
+            <p>Gender: <span th:text="${lastCandidate.gender}"></span></p>
+            <p>Experience: <span th:text="${lastCandidate.experience}"></span></p>
+            <p>Region: <span th:text="${lastCandidate.region}"></span></p>
+            <p>Salary: </p>
+            <p>KeyWord: </p>
         </div>
     </div>
 </div>
