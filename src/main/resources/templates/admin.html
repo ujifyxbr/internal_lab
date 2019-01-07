@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Admin</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 th:text="${messageAdmin}"></h1>
+            <form action="/" method="GET">
+                <input type="submit" value="back">
+            </form>
+            <br>
+            <form th:action="@{/logout}" method="post">
+                <input type="submit" value="Sign Out" />
+            </form>
+        </div>
+    </div>
+    <br>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Lock</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user: ${user}">
+            <td th:text="${user.getUserId()}"></td>
+            <td th:text="${user.getUserName()}"></td>
+            <td th:text="${user.getUserRole()}"></td>
+            <td><input type="checkbox" name="active" th:checked="${user.getUserLock() == true}" /></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
