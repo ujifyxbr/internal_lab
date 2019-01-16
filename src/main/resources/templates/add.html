@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>for writing data in the database</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <!--<input method="get">-->
+            <h1>Добавление данных в БД</h1>
+
+            <div>
+                <form method="post">
+                    <input type="text" name="name" placeholder="name"/>
+                    <input type="text" name="age" placeholder="age"/>
+
+                    <label for="gender">Gender:</label> &nbsp;
+                    <select name="gender" id="gender">
+                        <option value="Male">Male</option>
+                        <option value="Famale">Famale</option>
+                    </select>
+
+                    <input type="text" name="region" placeholder="region"/>
+                    <input type="text" name="salary" placeholder="salary"/>
+                    <input type="text" name="developer" placeholder="developer"/>
+                    <input type="text" name="experience" placeholder="experience"/>
+                    <input type="text" name="keyword" placeholder="keyword"/>
+
+                    <button type="submit">Добавить</button>
+                </form>
+
+            </div>
+            <form method="get">
+                <div th:each="candidate:${candidates}">
+
+                    <span th:text="${candidate.getName()}"></span>
+                    <span th:text="${candidate.getAge()}"></span>
+                    <span th:text="${candidate.getGender()}"></span>
+                    <span th:text="${candidate.getRegion()}"></span>
+                    <span th:text="${candidate.getSalary()}"></span>
+                    <span th:text="${candidate.getDeveloper()}"></span>
+                    <span th:text="${candidate.getExperience()}"></span>
+                    <span th:text="${candidate.getKeyWord()}"></span>
+
+
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
