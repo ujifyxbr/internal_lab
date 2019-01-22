@@ -37,7 +37,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         .password("password")
                         .roles("USER")
                         .build();
-        logger.info(user.getUsername() + " has successfully logged in ");
+        logger.info(user.getUsername() + " Registering new user");
         return new InMemoryUserDetailsManager(user);
 
     }

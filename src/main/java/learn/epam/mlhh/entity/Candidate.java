@@ -111,6 +111,16 @@ public class Candidate {
         this.keyword = keyword;
     }
 
+    public Candidate(String name, Integer age, String gender, String region, BigDecimal salary, String developer, Integer experience, String keyword) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.region = region;
+        this.salary = salary;
+        this.developer = developer;
+        this.experience = experience;
+        this.keyword = keyword;
+    }
     @Override
     public String toString() {
         return "Candidate{" +
