@@ -9,7 +9,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1 th:text="${messageAdmin}"></h1>
+            <h1>User management</h1>
             <form action="/" method="GET">
                 <input type="submit" value="back">
             </form>
@@ -34,10 +34,34 @@
             <td th:text="${user.getUserId()}"></td>
             <td th:text="${user.getUserName()}"></td>
             <td th:text="${user.getUserRole()}"></td>
-            <td><input type="checkbox" name="active" th:checked="${user.getUserLock() == true}" /></td>
+            <td><input type="checkbox" name="active" th:value="${user.getUserId()}" th:checked="${user.getUserLock() == true}" /></td>
         </tr>
         </tbody>
     </table>
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script>
+$('input:checkbox').click(function(){
+
+    var inputText = $(this).val();
+
+    $.ajax({
+		url: this.checked ? '/admin/user_lock' : '/admin/user_unlock',
+        type: 'GET',
+        dataType: 'json',
+        contentType: 'application/json',
+        mimeType: 'application/json',
+        data : ({ id: inputText }),
+		success: function(msg){
+		    if (msg == true) {
+           	    alert("User successfully blocked!");
+           	} else {
+           	    alert("User successfully unlocked!");
+           	}
+		}
+	});
+});
+</script>
 </body>
 </html>

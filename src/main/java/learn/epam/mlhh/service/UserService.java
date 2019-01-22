@@ -33,4 +33,12 @@ public class UserService {
     public Users findByName(String name) {
         return usersRepository.findByName(name);
     }
+
+    public Integer userLock(int id) {
+        return usersRepository.userLock(id);
+    }
+
+    public Integer userUnlock(int id) {
+        return usersRepository.userUnlock(id);
+    }
 }
