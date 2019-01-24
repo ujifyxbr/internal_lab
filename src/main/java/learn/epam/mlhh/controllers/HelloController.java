@@ -14,8 +14,8 @@ import java.util.Map;
 
 @Controller
 public class HelloController {
+    private String message = "Internal Lab";
     private final 	static Logger logger = Logger.getLogger(WebSecurityConfig.class);
-    private String message = "Form";
 
     @Autowired
     private CandidateService candidateService;
@@ -26,13 +26,6 @@ public class HelloController {
     public String home(Map<String, Object> model) {
         model.put("message", this.message);
         return "index";
-    }
-
-    @RequestMapping(value="/", method=RequestMethod.POST)
-    public String homePost(Map<String, Object> model) {
-        model.put("message", "you have sent value method Post");
-        logger.info("Method value sent sucsessfully");
-        return "post";
     }
 
     @RequestMapping(value="/table", method=RequestMethod.POST)
@@ -64,4 +57,8 @@ public class HelloController {
         return "add";
     }
 
+    @RequestMapping(value="/403")
+    public String Error403() {
+        return "403";
+    }
 }
